@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatelessWidget {
   const SplashViewBody({super.key});
-
+// the const is must constructor for the app
   @override
   Widget build(BuildContext context) {
     return Column(
