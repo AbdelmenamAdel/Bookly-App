@@ -1,9 +1,5 @@
-import 'package:bookly/Features/Home/peresentation/views/home_view.dart';
-import 'package:bookly/Features/Splash/presentation/views/methods/navigate_to_home.dart';
-import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'sliding_text.dart';
 
@@ -24,7 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
 
     initSlidigAnimation();
-    navigateToHome();
+    // navigateToHome();
   }
 
   @override
@@ -35,13 +31,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Image.asset(AppAssets.appLogo),
-        SlidingText(slidingAnimation: slidingAnimation),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Image.asset(AppAssets.appLogo),
+          const SizedBox(height: 10),
+          SlidingText(slidingAnimation: slidingAnimation),
+        ],
+      ),
     );
   }
 
@@ -51,7 +51,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       duration: const Duration(seconds: 2),
     );
     slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
+        Tween<Offset>(begin: const Offset(0, 15), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
   }
