@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
         CustomAppBar(
           asset: AppAssets.appLogo,
           icon: FontAwesomeIcons.magnifyingGlass,
-        )
+        ),
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
+import '../methods/navigate_to_home.dart';
 import 'sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
 
     initSlidigAnimation();
-    // navigateToHome();
+    navigateToHome();
   }
 
   @override
