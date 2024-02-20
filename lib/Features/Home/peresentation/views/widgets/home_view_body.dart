@@ -21,10 +21,37 @@ class HomeViewBody extends StatelessWidget {
             icon: FontAwesomeIcons.magnifyingGlass,
           ),
           FeaturedBooksListView(),
-          SizedBox(
-            height: 50,
+          SizedBox(height: 50),
+          Text('Best Sellers', style: Styles.titleMedium),
+          BestSellerListViewItem()
+        ],
+      ),
+    );
+  }
+}
+
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 125,
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 2.5 / 4,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(8),
+                image: const DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(AppAssets.test),
+                ),
+              ),
+            ),
           ),
-          Text('Best Sellers', style: Styles.titleMedium)
         ],
       ),
     );
