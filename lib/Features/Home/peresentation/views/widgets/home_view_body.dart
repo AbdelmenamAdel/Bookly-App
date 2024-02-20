@@ -1,3 +1,4 @@
+import 'package:bookly/Features/Home/peresentation/views/widgets/custom_List_view_item.dart';
 import 'package:bookly/Features/Home/peresentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class HomeViewBody extends StatelessWidget {
           asset: AppAssets.appLogo,
           icon: FontAwesomeIcons.magnifyingGlass,
         ),
+        CustomListViewItem(),
       ],
     );
   }
