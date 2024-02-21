@@ -28,32 +28,36 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 30),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: width,
-                child: Text(
-                  'Harry Potter and the  Gobelt of Fire',
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: Styles.textStyle20.copyWith(fontFamily: kGtsectrafine),
-                ),
-              ),
-              const SizedBox(height: 3),
-              const Text('J.K. Rowling'),
-              const SizedBox(height: 3),
-              Row(
-                children: [
-                  Text(
-                    r'19.99 $',
-                    style: Styles.textStyle20
-                        .copyWith(fontWeight: FontWeight.bold),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: width,
+                  child: Text(
+                    'Harry Potter and the  Gobelt of Fire',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: kGtsectrafine),
                   ),
-                  const BookRating()
-                ],
-              )
-            ],
+                ),
+                const SizedBox(height: 3),
+                const Text('J.K. Rowling'),
+                const SizedBox(height: 3),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      r'19.99 $',
+                      style: Styles.textStyle20
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    const BookRating()
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),
