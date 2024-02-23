@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_List_view_item.dart';
+import 'featured_List_view_item.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
