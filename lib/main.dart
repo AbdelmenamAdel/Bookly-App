@@ -1,9 +1,8 @@
+import 'package:bookly/Features/Splash/presentation/views/splash_view.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'Features/Splash/presentation/views/splash_view.dart';
 
 void main() {
   runApp(const BooklyApp());
