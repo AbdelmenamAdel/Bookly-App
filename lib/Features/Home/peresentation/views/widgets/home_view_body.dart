@@ -11,7 +11,7 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child: Column(
@@ -20,19 +20,18 @@ class HomeViewBody extends StatelessWidget {
               CustomAppBar(
                 asset: AppAssets.appLogo,
                 icon: FontAwesomeIcons.magnifyingGlass,
-                onPressed: () {},
               ),
-              const FeaturedBooksListView(),
-              const SizedBox(height: 50),
-              const Padding(
+              FeaturedBooksListView(),
+              SizedBox(height: 50),
+              Padding(
                 padding: EdgeInsets.only(left: 30),
                 child: Text('Best Sellers', style: Styles.textStyle18),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
             ],
           ),
         ),
-        const SliverFillRemaining(child: BestSellerListView())
+        SliverFillRemaining(child: BestSellerListView())
       ],
     );
   }
