@@ -1,9 +1,11 @@
 import 'package:bookly/Features/Home/peresentation/views/widgets/book_rating.dart';
 import 'package:bookly/Features/Home/peresentation/views/widgets/custom_book_image.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'books_action.dart';
 import 'custom_book_details_app_bar.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -34,41 +36,10 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 18),
-          const BookRating(mainAxisAlignment: MainAxisAlignment.center)
+          const BookRating(mainAxisAlignment: MainAxisAlignment.center),
+          const BooksAction(),
         ],
       ),
-    );
-  }
-}
-
-class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        Expanded(
-            child: CustomButton(
-          text: '19.99' r' $',
-          backGroundColor: Colors.white,
-          textColor: Colors.black,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(16),
-            bottomLeft: Radius.circular(16),
-          ),
-        )),
-        Expanded(
-            child: CustomButton(
-          text: 'E-Book',
-          backGroundColor: Color(0xffEF8262),
-          textColor: Colors.white,
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(16),
-            bottomRight: Radius.circular(16),
-          ),
-        )),
-      ],
     );
   }
 }
