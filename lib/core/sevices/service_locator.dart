@@ -10,6 +10,5 @@ final sl = GetIt.instance;
 Future<void> initServiceLocator() async {
   sl.registerLazySingleton<HomeRepoImplementation>(
       () => HomeRepoImplementation(sl.get<ApiService>()));
-
   sl.registerLazySingleton<ApiService>(() => ApiService(Dio()));
 }
