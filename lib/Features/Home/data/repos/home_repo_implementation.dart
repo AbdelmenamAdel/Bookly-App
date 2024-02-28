@@ -19,7 +19,7 @@ class HomeRepoImpl implements HomeRepository {
       }
       return Right(books);
     } on Exception catch (e) {
-      return Left(ServerFailure());
+      return Left(ServerFailure(e.toString()));
     }
   }
 
