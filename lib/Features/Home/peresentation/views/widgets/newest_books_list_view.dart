@@ -14,13 +14,15 @@ class NewestBooksListView extends StatelessWidget {
       builder: (context, state) {
         if (state is NewestBooksSuccess) {
           return ListView.builder(
-            itemCount: state.books.length,
+            // itemCount: state.books.length,
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
             itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: BookListViewItem(
-                book: state.books[index],
+              padding: const EdgeInsets.only(bottom: 10),
+              child:
+
+              BookListViewItem(
+                book: state.books[index]
               ),
             ),
           );

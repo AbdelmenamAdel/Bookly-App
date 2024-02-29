@@ -23,7 +23,8 @@ class BookListViewItem extends StatelessWidget {
           height: 125,
           child: Row(
             children: [
-              CustomBookImage(imageUrl: book.volumeInfo.imageLinks.thumbnail),
+              CustomBookImage(
+                  imageUrl: book.volumeInfo.imageLinks!.thumbnail??''),
               const SizedBox(width: 30),
               Expanded(
                 child: Column(
@@ -40,7 +41,9 @@ class BookListViewItem extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 3),
-                    Text(book.volumeInfo.authors![0]),
+                    Text(book.volumeInfo.authors![0],
+                    overflow: TextOverflow.ellipsis,
+                    ),
                     const SizedBox(height: 3),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
