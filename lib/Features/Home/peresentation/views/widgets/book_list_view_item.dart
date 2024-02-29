@@ -3,14 +3,13 @@ import 'package:bookly/Features/Home/peresentation/views/widgets/book_rating.dar
 import 'package:bookly/Features/Home/peresentation/views/widgets/custom_book_image.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
-import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
   const BookListViewItem({super.key, required this.book});
-final BookModel book;
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width * .5;
@@ -41,17 +40,20 @@ final BookModel book;
                       ),
                     ),
                     const SizedBox(height: 3),
-                    const Text('J.K. Rowling'),
+                    Text(book.volumeInfo.authors![0]),
                     const SizedBox(height: 3),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          r'19.99 $',
+                          'Free',
                           style: Styles.textStyle20
                               .copyWith(fontWeight: FontWeight.bold),
                         ),
-                        const BookRating()
+                        BookRating(
+                          count: book.volumeInfo.averageRating ?? 0,
+                          rating: book.volumeInfo.ratingsCount ?? 0,
+                        )
                       ],
                     )
                   ],
