@@ -1,4 +1,6 @@
+import 'package:bookly/Features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/Home/peresentation/views/widgets/book_rating.dart';
+import 'package:bookly/Features/Home/peresentation/views/widgets/custom_book_image.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
@@ -7,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
-
+  const BookListViewItem({super.key, required this.book});
+final BookModel book;
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width * .5;
@@ -22,19 +24,7 @@ class BookListViewItem extends StatelessWidget {
           height: 125,
           child: Row(
             children: [
-              AspectRatio(
-                aspectRatio: 2.7 / 4,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(8),
-                    image: const DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage(AppAssets.test),
-                    ),
-                  ),
-                ),
-              ),
+              CustomBookImage(imageUrl: book.volumeInfo.imageLinks.thumbnail),
               const SizedBox(width: 30),
               Expanded(
                 child: Column(
@@ -43,7 +33,7 @@ class BookListViewItem extends StatelessWidget {
                     SizedBox(
                       width: width,
                       child: Text(
-                        'Harry Potter and the  Gobelt of Fire',
+                        book.volumeInfo.title!,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: Styles.textStyle20
