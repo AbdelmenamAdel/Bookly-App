@@ -17,14 +17,14 @@ class BookListViewItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(AppRoutes.bookDetailsView);
+          GoRouter.of(context).push(AppRoutes.bookDetailsView, extra: book);
         },
         child: SizedBox(
           height: 125,
           child: Row(
             children: [
               CustomBookImage(
-                  imageUrl: book.volumeInfo.imageLinks!.thumbnail??''),
+                  imageUrl: book.volumeInfo.imageLinks!.thumbnail ?? ''),
               const SizedBox(width: 30),
               Expanded(
                 child: Column(
@@ -41,8 +41,9 @@ class BookListViewItem extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 3),
-                    Text(book.volumeInfo.authors![0],
-                    overflow: TextOverflow.ellipsis,
+                    Text(
+                      book.volumeInfo.authors![0],
+                      overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(height: 3),
                     Row(
