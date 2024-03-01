@@ -24,7 +24,7 @@ class BookListViewItem extends StatelessWidget {
           child: Row(
             children: [
               CustomBookImage(
-                  imageUrl: book.volumeInfo.imageLinks!.thumbnail ?? ''),
+                  imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? ''),
               const SizedBox(width: 30),
               Expanded(
                 child: Column(
@@ -55,8 +55,8 @@ class BookListViewItem extends StatelessWidget {
                               .copyWith(fontWeight: FontWeight.bold),
                         ),
                         BookRating(
-                          count: book.volumeInfo.averageRating ?? 0,
-                          rating: book.volumeInfo.ratingsCount ?? 0,
+                          count: book.volumeInfo.ratingsCount ?? 0,
+                          rating: book.volumeInfo.averageRating ?? 0,
                         )
                       ],
                     )
