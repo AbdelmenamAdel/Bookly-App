@@ -24,7 +24,7 @@ class BooksDetailsSection extends StatelessWidget {
         const SizedBox(height: 43),
         Text(
           textAlign: TextAlign.center,
-          book.volumeInfo.title!,
+          book.volumeInfo.title ?? '',
           style: Styles.textStyle30,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
