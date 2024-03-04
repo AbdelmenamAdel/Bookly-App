@@ -28,8 +28,8 @@ class ServerFailure extends Failure {
       case DioExceptionType.cancel:
         return ServerFailure("Requfest to ApiServer was canceled");
 
-      case DioExceptionType.connectionError:
-        return ServerFailure("Connection Error with ApiServer");
+      // case DioExceptionType.connectionError:
+      //   return ServerFailure("Connection Error with ApiServer");
 
       case DioExceptionType.unknown:
         return ServerFailure("Opps There was an error");

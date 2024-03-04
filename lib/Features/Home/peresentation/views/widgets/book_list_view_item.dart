@@ -12,7 +12,7 @@ class BookListViewItem extends StatelessWidget {
   final BookModel book;
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width * .5;
+    final double width = MediaQuery.of(context).size.width * .6;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: GestureDetector(
@@ -36,14 +36,14 @@ class BookListViewItem extends StatelessWidget {
                         book.volumeInfo.title!,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: Styles.textStyle20
-                            .copyWith(fontFamily: kGtsectrafine),
+                        style: Styles.textStyle16,
                       ),
                     ),
                     const SizedBox(height: 3),
                     Text(
                       book.volumeInfo.authors![0],
                       overflow: TextOverflow.ellipsis,
+                      style: Styles.textStyle12,
                     ),
                     const SizedBox(height: 3),
                     Row(
@@ -51,7 +51,7 @@ class BookListViewItem extends StatelessWidget {
                       children: [
                         Text(
                           'Free',
-                          style: Styles.textStyle20
+                          style: Styles.textStyle14
                               .copyWith(fontWeight: FontWeight.bold),
                         ),
                         BookRating(

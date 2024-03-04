@@ -19,13 +19,13 @@ class BookRating extends StatelessWidget {
       mainAxisAlignment: mainAxisAlignment,
       children: [
         const Icon(
-            size: 16, FontAwesomeIcons.solidStar, color: Color(0xffFFDD4F)),
+            size: 14, FontAwesomeIcons.solidStar, color: Color(0xffFFDD4F)),
         const SizedBox(width: 6.3),
-        Text(rating.toString(), style: Styles.textStyle16),
+        Text(rating.toString(), style: Styles.textStyle14),
         const SizedBox(width: 5),
         Opacity(
           opacity: .5,
-          child: Text('($count)', style: Styles.textStyle16),
+          child: Text('($count)', style: Styles.textStyle14),
         )
       ],
     );

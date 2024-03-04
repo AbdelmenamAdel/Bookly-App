@@ -25,7 +25,7 @@ class BooksDetailsSection extends StatelessWidget {
         Text(
           textAlign: TextAlign.center,
           book.volumeInfo.title ?? '',
-          style: Styles.textStyle30,
+          style: Styles.textStyle24,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
@@ -34,7 +34,7 @@ class BooksDetailsSection extends StatelessWidget {
           opacity: .7,
           child: Text(
             book.volumeInfo.authors?[0] ?? '',
-            style: Styles.textStyle18.copyWith(
+            style: Styles.textStyle14.copyWith(
                 fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
           ),
         ),
